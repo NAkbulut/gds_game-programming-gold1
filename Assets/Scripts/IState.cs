@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IStates
+public interface IState
 {
     void Entry(GameObject vehicle);
-    void Action();
+    void Update();
+    void FixedUpdate();
+    void StateTransition();
     void Exit();
 }
