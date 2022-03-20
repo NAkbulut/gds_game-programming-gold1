@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using ConcreteState;
 
 public class PlayerController : MonoBehaviour
 {
     public static IState state;
-    public string currState;
+    public Text currentState;
 
     // Initialize States
     internal static IState sDriving = new Driving();
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currState = state.GetType().Name;
+        currentState.text = state.GetType().Name;
         state.Update();
     }
 
